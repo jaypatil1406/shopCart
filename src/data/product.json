@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Laptop",
+    "price": 50000,
+    "image": "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=900",
+    "description": "A reliable laptop for study, office work and everyday tasks. It offers a clear display, comfortable keyboard and smooth performance.",
+    "rating": 4.5,
+    "reviews": [
+      { "id": 1, "customerName": "Rahul", "rating": 5, "comment": "Good laptop for daily work." },
+      { "id": 2, "customerName": "Priya", "rating": 4, "comment": "Nice design and display." }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Mobile",
+    "price": 20000,
+    "image": "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=900",
+    "description": "A stylish smartphone for communication, photography, entertainment and everyday use.",
+    "rating": 4.2,
+    "reviews": [
+      { "id": 1, "customerName": "Amit", "rating": 4, "comment": "Good phone at this price." },
+      { "id": 2, "customerName": "Sneha", "rating": 4, "comment": "Camera quality is nice." }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Headphones",
+    "price": 2000,
+    "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=900",
+    "description": "Comfortable headphones for music, online meetings and entertainment.",
+    "rating": 4.3,
+    "reviews": [
+      { "id": 1, "customerName": "Karan", "rating": 5, "comment": "Comfortable and clear sound." },
+      { "id": 2, "customerName": "Neha", "rating": 4, "comment": "Good value for money." }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Keyboard",
+    "price": 1500,
+    "image": "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=900",
+    "description": "A simple and comfortable keyboard for typing, coding and everyday computer use.",
+    "rating": 4.1,
+    "reviews": [
+      { "id": 1, "customerName": "Vikas", "rating": 4, "comment": "Keys feel comfortable." },
+      { "id": 2, "customerName": "Meera", "rating": 4, "comment": "Works as expected." }
+    ]
+  }
+]
