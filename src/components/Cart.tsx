@@ -17,14 +17,12 @@ function Cart({
   onContinueShopping
 }: CartProps) {
 
-  // Calculate subtotal
   const subtotal = cartItems.reduce(
     (total, item) =>
       total + item.product.price * item.quantity,
     0
   );
 
-  // Total amount
   const total = subtotal;
 
   return (
