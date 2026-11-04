@@ -18,7 +18,6 @@ function App() {
 
   const [showCart, setShowCart] = useState(false);
 
-  // Add product to cart
   function handleAddToCart(product: Product) {
     const existingItem = cartItems.find(
       (item) => item.product.id === product.id
@@ -46,7 +45,6 @@ function App() {
     setShowCart(true);
   }
 
-  // Increase product quantity
   function increaseQuantity(id: number) {
     setCartItems(
       cartItems.map((item) =>
@@ -57,7 +55,6 @@ function App() {
     );
   }
 
-  // Decrease product quantity
   function decreaseQuantity(id: number) {
     setCartItems(
       cartItems.map((item) =>
@@ -71,7 +68,6 @@ function App() {
     );
   }
 
-  // Remove product from cart
   function removeProduct(id: number) {
     setCartItems(
       cartItems.filter(
@@ -79,8 +75,7 @@ function App() {
       )
     );
   }
-
-  // Calculate total quantity
+  
   const cartCount = cartItems.reduce(
     (total, item) => total + item.quantity,
     0
