@@ -1,3 +1,4 @@
+
 interface ButtonProps {
   text: string;
   variant: "primary" | "secondary" | "danger" | "outline";
@@ -5,10 +6,19 @@ interface ButtonProps {
 }
 
 function Button({ text, variant, onClick }: ButtonProps) {
+  const buttonClass =
+    variant === "primary"
+      ? "primary-button"
+      : variant === "secondary"
+      ? "secondary-button"
+      : variant === "danger"
+      ? "danger-button"
+      : "outline-button";
+
   return (
     <button
       type="button"
-      className={`custom-button ${variant}`}
+      className={buttonClass}
       onClick={onClick}
     >
       {text}
@@ -17,4 +27,3 @@ function Button({ text, variant, onClick }: ButtonProps) {
 }
 
 export default Button;
-
