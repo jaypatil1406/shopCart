@@ -1,4 +1,5 @@
 import type { Product } from "../types/product";
+import Button from "./button";
 
 interface ProductDetailsProps {
   product: Product;
@@ -9,7 +10,7 @@ interface ProductDetailsProps {
 function ProductDetails({ product, onBack, onAddToCart }: ProductDetailsProps) {
   return (
     <section className="details-page">
-      <button className="back-button" onClick={onBack}> Back to products</button>
+      <Button text="Back to products" variant="outline" onClick={onBack} />
 
       <div className="details-card">
         <img className="details-image" src={product.image} alt={product.name} />
@@ -18,11 +19,15 @@ function ProductDetails({ product, onBack, onAddToCart }: ProductDetailsProps) {
           <p className="eyebrow">PRODUCT DETAILS</p>
           <h2>{product.name}</h2>
           <p className="details-rating">★ {product.rating} / 5</p>
-          <p className="details-price">₹{product.price.toLocaleString("en-IN")}</p>
+          <p className="details-price">
+            ₹{product.price.toLocaleString("en-IN")}
+          </p>
           <p className="description">{product.description}</p>
-          <button className="primary-button" onClick={() => onAddToCart(product)}>
-            Add to Cart
-          </button>
+          <Button
+            text="Add to Cart"
+            variant="primary"
+            onClick={() => onAddToCart(product)}
+          />
         </div>
       </div>
 
