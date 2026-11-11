@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import productsData from "./data/product.json";
 
@@ -7,12 +6,12 @@ import type { Product, CartItem } from "./types/product";
 import ProductList from "./components/ProductList";
 import ProductDetails from "./components/ProductDetails";
 import Cart from "./components/Cart";
+import Button from "./components/button";
 
 const products = productsData as Product[];
 
 function App() {
-  const [selectedProduct, setSelectedProduct] =
-    useState<Product | null>(null);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
 
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
 
@@ -20,7 +19,7 @@ function App() {
 
   function handleAddToCart(product: Product) {
     const existingItem = cartItems.find(
-      (item) => item.product.id === product.id
+      (item) => item.product.id === product.id,
     );
 
     if (existingItem) {
@@ -28,16 +27,16 @@ function App() {
         cartItems.map((item) =>
           item.product.id === product.id
             ? { ...item, quantity: item.quantity + 1 }
-            : item
-        )
+            : item,
+        ),
       );
     } else {
       setCartItems([
         ...cartItems,
         {
           product: product,
-          quantity: 1
-        }
+          quantity: 1,
+        },
       ]);
     }
 
@@ -50,8 +49,8 @@ function App() {
       cartItems.map((item) =>
         item.product.id === id
           ? { ...item, quantity: item.quantity + 1 }
-          : item
-      )
+          : item,
+      ),
     );
   }
 
@@ -61,25 +60,18 @@ function App() {
         item.product.id === id
           ? {
               ...item,
-              quantity: Math.max(0, item.quantity - 1)
+              quantity: Math.max(0, item.quantity - 1),
             }
-          : item
-      )
+          : item,
+      ),
     );
   }
 
   function removeProduct(id: number) {
-    setCartItems(
-      cartItems.filter(
-        (item) => item.product.id !== id
-      )
-    );
+    setCartItems(cartItems.filter((item) => item.product.id !== id));
   }
-  
-  const cartCount = cartItems.reduce(
-    (total, item) => total + item.quantity,
-    0
-  );
+
+  const cartCount = cartItems.reduce((total, item) => total + item.quantity, 0);
 
   function goToProducts() {
     setShowCart(false);
@@ -88,32 +80,26 @@ function App() {
 
   return (
     <div className="app">
-
       <header className="topbar">
-
         <button className="brand" onClick={goToProducts}>
           ShopCart<span>.</span>
         </button>
 
         <nav>
-          <button onClick={goToProducts}>
-            Products
-          </button>
+          <Button text="Products" variant="outline" onClick={goToProducts} />
 
-          <button
+          <Button
+            text={`Cart (${cartCount})`}
+            variant="secondary"
             onClick={() => {
               setSelectedProduct(null);
               setShowCart(true);
             }}
-          >
-            Cart ({cartCount})
-          </button>
+          />
         </nav>
-
       </header>
 
       <main className="main-content">
-
         {showCart ? (
           <Cart
             cartItems={cartItems}
@@ -134,13 +120,9 @@ function App() {
             onSelectProduct={setSelectedProduct}
           />
         )}
-
       </main>
 
-      <footer>
-        ShopCart : Your Choice : OurService
-      </footer>
-
+      <footer>ShopCart : Your Choice : OurService</footer>
     </div>
   );
 }
