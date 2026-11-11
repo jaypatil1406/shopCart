@@ -1,4 +1,5 @@
 import type { Product } from "../types/product";
+import Button from "./button";
 
 interface ProductListProps {
   products: Product[];
@@ -11,7 +12,9 @@ function ProductList({ products, onSelectProduct }: ProductListProps) {
       <div className="section-heading">
         <p className="eyebrow">OUR COLLECTION</p>
         <h2>Available Products</h2>
-        <p className="muted">Choose a product to see its details and customer reviews.</p>
+        <p className="muted">
+          Choose a product to see its details and customer reviews.
+        </p>
       </div>
 
       <div className="product-grid">
@@ -27,12 +30,16 @@ function ProductList({ products, onSelectProduct }: ProductListProps) {
             <div className="product-info">
               <div>
                 <h3>{product.name}</h3>
-                <p className="price">₹{product.price.toLocaleString("en-IN")}</p>
+                <p className="price">
+                  ₹{product.price.toLocaleString("en-IN")}
+                </p>
                 <p className="rating">★ {product.rating} / 5</p>
               </div>
-              <button className="secondary-button" onClick={() => onSelectProduct(product)}>
-                View details
-              </button>
+              <Button
+                text="View details"
+                variant="secondary"
+                onClick={() => onSelectProduct(product)}
+              />
             </div>
           </article>
         ))}
