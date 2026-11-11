@@ -396,3 +396,29 @@ footer {
     height: 85px;
   }
 }
+.danger-button {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  background: #ffe8e8;
+  color: #d62828;
+  font-weight: bold;
+}
+
+.outline-button {
+  border: 1px solid #5265e8;
+  border-radius: 8px;
+  padding: 10px 16px;
+  background: white;
+  color: #5265e8;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.danger-button:hover {
+  background: #ffd6d6;
+}
+
+.outline-button:hover {
+  background: #eef0ff;
+}
